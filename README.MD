@@ -51,7 +51,7 @@ Here's a summary of key API endpoints:
 4. Use Postman or another API testing tool to interact with the API endpoints.
 
 ## 📄 Documentation
-The project documentation is generated using [Docgen](https://github.com/docgen). For detailed information on each endpoint, including request and response formats, refer to the generated documentation.
+The project documentation is generated using [Docgen](https://github.com/thedevsaddam/docgen). For detailed information on each endpoint, including request and response formats, refer to the generated documentation.
 
 ## 🤝 Contributing
 Contributions are welcome! Open a pull request or create an issue to discuss your ideas.
