@@ -17,12 +17,13 @@ import mongoSanitize from "express-mongo-sanitize";
 // database
 import connectDB from "./db/connect.js";
 
-// router
+// router implementation
 import authRouter from "./routes/authRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import productRouter from "./routes/productRoutes.js";
 import reviewRouter from "./routes/reviewRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
+
 // user created middleware
 import notFoundMiddleware from "./middleware/not-found.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
@@ -41,30 +42,28 @@ app.use(limiter);
 app.use(helmet());
 app.use(cors());
 app.use(mongoSanitize());
-// built-in middleware
 
+// built-in middleware
 app.use(morgan());
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 app.use(express.static("./public"));
 app.use(fileUpload());
-// temp route
-app.get("/", (req, res) => {
-  // console.log(req.cookies);
-  res.send("Hello World!");
-});
 
+// routes
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/orders", orderRouter);
+
 //error handler middlewares
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5000;
 
+// database connection
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
