@@ -47,7 +47,7 @@ Here's a summary of key API endpoints:
 ### Setup:
 1. Clone the repository from GitHub to your local machine.
 2. Install the required dependencies with your package manager (like npm or yarn).
-3. Run the server and ensure it works at `http://localhost:5000`.
+3. Run the server and ensure it works at `http://localhost:4000`.
 4. Use Postman or another API testing tool to interact with the API endpoints.
 
 ## 📄 Documentation
